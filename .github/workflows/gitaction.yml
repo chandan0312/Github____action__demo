@@ -2,16 +2,10 @@
 
 name: githubaction
 
- 
 on:
  
   push:
     branches: [ main ]
-
-
- 
- 
-
 
 jobs:
 
