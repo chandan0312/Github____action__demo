@@ -30,5 +30,5 @@ jobs:
           echo 'Runninh build...'
           docker build . -t docker push chandan0312/project1:latest
           echo 'pushing image...'
-          docker push docker push chandan0312/project1:latest
+          docker push chandan0312/project1:latest
           echo 'done. '
