@@ -32,3 +32,4 @@ jobs:
           echo 'pushing image...'
           docker push chandan0312/project1:latest
           echo 'done. '
+          exit
