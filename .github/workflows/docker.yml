@@ -1,0 +1,34 @@
+
+name: docker build CI
+ 
+on:
+
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - uses: actions/checkout@v2
+      - name: build
+        env:
+          DOCKER_HUB: ${{ SECRETS.DOCKER_HUB }}
+          DOCKER_HUB_KEY: ${{ SECRETS.DOCKER_HUB_KEY }}
+
+        run: |
+          ls -l
+          echo 'Docker login'
+          docker login -u $DOCKER_HUB -p $DOCKER_HUB_KEY
+          echo 'Runninh build...'
+          docker build . -t docker push chandan0312/project1:latest
+          echo 'pushing image...'
+          docker push docker push chandan0312/project1:latest
+          echo 'done. '
